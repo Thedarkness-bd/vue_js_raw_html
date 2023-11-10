@@ -1,4 +1,14 @@
 Vue.createApp({
+  computed: {
+    navbarClasses() {
+      return {
+        "navbar-light": !this.useDarkMode,
+        "bg-light": !this.useDarkMode,
+        "navbar-dark": this.useDarkMode,
+        "bg-dark": this.useDarkMode,
+      };
+    },
+  },
   data() {
     return {
       activeIndex: 0,

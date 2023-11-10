@@ -10,10 +10,7 @@
     />
   </head>
   <body>
-    <nav
-      class="navbar navbar-expand-lg"
-      :class="{ 'navbar-light bg-light' : !useDarkMode, 'navbar-dark bg-dark' : useDarkMode}"
-    >
+    <nav class="navbar navbar-expand-lg" :class="navbarClasses">
       <div class="container-fluid">
         <a class="navbar-brand">Vue js</a>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
