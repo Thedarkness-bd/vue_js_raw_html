@@ -12,7 +12,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <nav
+      class="navbar navbar-expand-lg"
+      :class="{ 'navbar-light bg-light' : !useDarkMode, 'navbar-dark bg-dark' : useDarkMode}"
+    >
       <div class="container-fluid">
         <a class="navbar-brand">Vue js</a>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -28,6 +31,14 @@
             >
           </li>
         </ul>
+        <form class="d-flex">
+          <button
+            class="btn btn-primary"
+            @click.prevent="useDarkMode = !useDarkMode"
+          >
+            Toogle mode
+          </button>
+        </form>
       </div>
     </nav>
 
@@ -41,6 +52,7 @@
         data() {
           return {
             activeIndex: 0,
+            useDarkMode: false,
             pages: [
               {
                 link: { text: "Home", url: "index.html" },
